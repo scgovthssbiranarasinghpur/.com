@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sadhu Charan Govt. Higher Secondary School – Biranarasinghpur</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --navy: #0b2545;
+  --navy-light: #163a6b;
+  --saffron: #f4a012;
+  --saffron-light: #ffc04a;
+  --green: #0f7a32;
+  --green-light: #15a845;
+  --white: #ffffff;
+  --off-white: #f8f6f1;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-600: #4b5563;
+  --gray-800: #1f2937;
+  --shadow-sm: 0 2px 8px rgba(11,37,69,0.10);
+  --shadow-md: 0 4px 20px rgba(11,37,69,0.15);
+  --shadow-lg: 0 8px 40px rgba(11,37,69,0.20);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ===== RESET ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{font-family:'DM Sans',sans-serif;background:var(--off-white);color:var(--gray-800);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+button{cursor:pointer;border:none;background:none;font-family:inherit;}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--off-white);}
+::-webkit-scrollbar-thumb{background:var(--saffron);border-radius:3px;}
+
+/* ===== UTILITY ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.section{padding:80px 0;}
+.section-alt{background:var(--white);}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--navy);text-align:center;margin-bottom:8px;}
+.section-subtitle{text-align:center;color:var(--gray-600);font-size:1rem;margin-bottom:50px;}
+.section-divider{width:60px;height:4px;background:linear-gradient(90deg,var(--saffron),var(--green));border-radius:2px;margin:12px auto 40px;}
+.badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:0.75rem;font-weight:600;letter-spacing:0.5px;}
+.badge-saffron{background:rgba(244,160,18,0.15);color:#b8760a;}
+.badge-green{background:rgba(15,122,50,0.12);color:var(--green);}
+.badge-navy{background:rgba(11,37,69,0.1);color:var(--navy);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-weight:600;font-size:0.95rem;transition:var(--transition);}
+.btn-primary{background:var(--saffron);color:var(--navy);}
+.btn-primary:hover{background:var(--saffron-light);transform:translateY(-2px);box-shadow:var(--shadow-md);}
+.btn-outline{border:2px solid var(--saffron);color:var(--saffron);}
+.btn-outline:hover{background:var(--saffron);color:var(--navy);}
+.btn-green{background:var(--green);color:var(--white);}
+.btn-green:hover{background:var(--green-light);transform:translateY(-2px);}
+.odia{font-family:'DM Sans',sans-serif;letter-spacing:0.3px;}
+.loading-spinner{display:flex;justify-content:center;align-items:center;padding:40px;color:var(--gray-400);}
+.loading-spinner i{animation:spin 1s linear infinite;font-size:1.5rem;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.error-msg{text-align:center;padding:30px;color:var(--gray-400);font-style:italic;}
+
+/* ===== TOP BAR ===== */
+#topbar{background:var(--navy);color:rgba(255,255,255,0.85);font-size:0.8rem;padding:6px 0;border-bottom:2px solid var(--saffron);}
+.topbar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;}
+.topbar-left{display:flex;align-items:center;gap:16px;}
+.topbar-right{display:flex;align-items:center;gap:12px;}
+.topbar-item{display:flex;align-items:center;gap:5px;}
+.topbar-item i{color:var(--saffron);font-size:0.75rem;}
+.topbar-right a{color:rgba(255,255,255,0.7);transition:color 0.2s;}
+.topbar-right a:hover{color:var(--saffron);}
+
+/* ===== NAVBAR ===== */
+#navbar{background:var(--white);position:sticky;top:0;z-index:1000;box-shadow:var(--shadow-sm);border-bottom:3px solid var(--saffron);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;max-width:1200px;margin:0 auto;}
+.nav-brand{display:flex;align-items:center;gap:12px;}
+.nav-logo{width:54px;height:54px;border-radius:50%;border:2px solid var(--saffron);object-fit:cover;background:var(--navy);}
+.nav-logo-fallback{width:54px;height:54px;border-radius:50%;border:2px solid var(--saffron);background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--saffron);font-size:1.3rem;}
+.nav-school-name{font-family:'Playfair Display',serif;}
+.nav-school-name h1{font-size:0.95rem;font-weight:700;color:var(--navy);line-height:1.2;}
+.nav-school-name p{font-size:0.7rem;color:var(--green);font-weight:500;}
+.nav-links{display:flex;align-items:center;gap:4px;}
+.nav-links a{font-size:0.82rem;font-weight:500;color:var(--gray-600);padding:6px 10px;border-radius:6px;transition:var(--transition);white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--navy);background:rgba(244,160,18,0.12);}
+.nav-right{display:flex;align-items:center;gap:8px;}
+.nav-admin-btn{font-size:0.8rem;padding:6px 14px;background:var(--navy);color:var(--white);border-radius:6px;transition:var(--transition);}
+.nav-admin-btn:hover{background:var(--navy-light);}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:4px;cursor:pointer;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:var(--transition);}
+.mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:var(--navy);z-index:2000;flex-direction:column;padding:30px 20px;overflow-y:auto;}
+.mobile-menu.open{display:flex;}
+.mobile-menu-close{position:absolute;top:16px;right:20px;color:var(--white);font-size:1.5rem;cursor:pointer;}
+.mobile-menu a{color:rgba(255,255,255,0.85);font-size:1.1rem;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.1);display:block;}
+.mobile-menu a:hover{color:var(--saffron);}
+
+/* ===== HERO SECTION ===== */
+#hero{position:relative;height:100vh;min-height:600px;max-height:900px;overflow:hidden;background:var(--navy);}
+.hero-slider{position:relative;width:100%;height:100%;}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;}
+.hero-slide.active{opacity:1;}
+.hero-slide img{width:100%;height:100%;object-fit:cover;filter:brightness(0.45);}
+.hero-slide-bg{width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 60%,rgba(15,122,50,0.3) 100%);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(11,37,69,0.3) 0%,rgba(11,37,69,0.7) 100%);}
+.hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;z-index:2;}
+.hero-badge{background:rgba(244,160,18,0.2);border:1px solid var(--saffron);color:var(--saffron);padding:6px 18px;border-radius:20px;font-size:0.8rem;font-weight:600;letter-spacing:1px;margin-bottom:20px;backdrop-filter:blur(4px);}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3.5rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:8px;text-shadow:0 2px 20px rgba(0,0,0,0.3);}
+.hero-subtitle{font-size:clamp(0.9rem,2vw,1.1rem);color:rgba(255,255,255,0.8);margin-bottom:6px;}
+.hero-motto{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1rem,2.5vw,1.3rem);color:var(--saffron);margin-bottom:30px;}
+.hero-stats{display:flex;gap:30px;margin-bottom:36px;flex-wrap:wrap;justify-content:center;}
+.hero-stat{text-align:center;background:rgba(255,255,255,0.08);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:14px 22px;}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--saffron);display:block;}
+.hero-stat-label{font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:2px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.hero-slider-dots{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:3;}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:var(--transition);}
+.hero-dot.active{background:var(--saffron);width:24px;border-radius:4px;}
+.hero-scroll{position:absolute;bottom:60px;right:30px;z-index:3;color:rgba(255,255,255,0.5);font-size:0.75rem;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.hero-scroll i{animation:bounce 2s infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+/* ===== NOTICES ===== */
+.notices-wrapper{display:grid;grid-template-columns:1fr 320px;gap:30px;align-items:start;}
+.notices-main{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;border:1px solid var(--gray-200);}
+.notices-header{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--white);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;}
+.notices-header h3{font-family:'Playfair Display',serif;font-size:1.2rem;}
+.notices-header i{color:var(--saffron);}
+.notices-ticker{max-height:400px;overflow-y:auto;}
+.notice-item{display:flex;gap:14px;padding:16px 20px;border-bottom:1px solid var(--gray-100);transition:background 0.2s;cursor:pointer;}
+.notice-item:hover{background:rgba(244,160,18,0.05);}
+.notice-item:last-child{border-bottom:none;}
+.notice-dot{width:10px;height:10px;border-radius:50%;background:var(--saffron);margin-top:5px;flex-shrink:0;}
+.notice-dot.new{background:var(--green);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(15,122,50,0.4);}50%{box-shadow:0 0 0 6px rgba(15,122,50,0);}}
+.notice-text{flex:1;}
+.notice-title{font-weight:600;color:var(--navy);font-size:0.9rem;margin-bottom:3px;}
+.notice-date{font-size:0.75rem;color:var(--gray-400);}
+.notice-link{font-size:0.75rem;color:var(--green);font-weight:500;}
+.notice-side{display:flex;flex-direction:column;gap:16px;}
+.quick-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:20px;border:1px solid var(--gray-200);border-left:4px solid var(--saffron);}
+.quick-card h4{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:12px;font-size:1rem;}
+.quick-card p{font-size:0.85rem;color:var(--gray-600);line-height:1.6;}
+.admission-alert{background:linear-gradient(135deg,var(--green),var(--green-light));color:var(--white);border-radius:var(--radius);padding:20px;text-align:center;}
+.admission-alert h4{font-family:'Playfair Display',serif;margin-bottom:8px;}
+.admission-alert p{font-size:0.85rem;opacity:0.9;margin-bottom:14px;}
+
+/* ===== ACHIEVEMENTS ===== */
+.achievements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;}
+.achievement-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--gray-200);transition:var(--transition);}
+.achievement-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.achievement-icon{background:linear-gradient(135deg,var(--navy),var(--navy-light));padding:24px;text-align:center;position:relative;overflow:hidden;}
+.achievement-icon::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:rgba(244,160,18,0.15);border-radius:50%;}
+.achievement-icon i{font-size:2rem;color:var(--saffron);position:relative;z-index:1;}
+.achievement-body{padding:20px;}
+.achievement-body h3{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:6px;font-size:1.05rem;}
+.achievement-body p{font-size:0.85rem;color:var(--gray-600);line-height:1.6;}
+.achievement-year{display:inline-block;margin-top:10px;font-size:0.75rem;font-weight:600;color:var(--green);}
+
+/* ===== HM MESSAGE / ABOUT ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.about-image-wrap{position:relative;}
+.about-img-frame{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:4px solid var(--saffron);}
+.about-img-frame img{width:100%;height:380px;object-fit:cover;}
+.about-img-badge{position:absolute;bottom:-16px;right:-16px;background:var(--navy);color:var(--white);padding:14px 20px;border-radius:var(--radius);box-shadow:var(--shadow-md);text-align:center;border:2px solid var(--saffron);}
+.about-img-badge span{display:block;font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--saffron);}
+.about-content{}
+.about-content .badge{margin-bottom:12px;}
+.about-content h2{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);margin-bottom:16px;}
+.about-quote{border-left:4px solid var(--saffron);padding:14px 20px;background:rgba(244,160,18,0.06);border-radius:0 var(--radius) var(--radius) 0;margin:16px 0;font-style:italic;color:var(--gray-600);font-size:0.95rem;line-height:1.7;}
+.hm-name{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);font-size:1.05rem;margin-top:16px;}
+.hm-desig{font-size:0.8rem;color:var(--green);font-weight:500;}
+.school-info-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px;}
+.school-info-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--gray-600);}
+.school-info-item i{color:var(--saffron);width:16px;}
+
+/* ===== GALLERY ===== */
+.gallery-filter{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px;}
+.gallery-filter-btn{padding:7px 18px;border-radius:20px;font-size:0.85rem;font-weight:500;border:2px solid var(--gray-200);color:var(--gray-600);transition:var(--transition);}
+.gallery-filter-btn.active,.gallery-filter-btn:hover{border-color:var(--saffron);background:var(--saffron);color:var(--navy);}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+.gallery-item{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;cursor:pointer;position:relative;box-shadow:var(--shadow-sm);}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;}
+.gallery-item:hover img{transform:scale(1.08);}
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,37,69,0.8),transparent);opacity:0;transition:var(--transition);display:flex;align-items:flex-end;padding:16px;}
+.gallery-item:hover .gallery-overlay{opacity:1;}
+.gallery-caption{color:var(--white);font-size:0.85rem;font-weight:500;}
+/* Lightbox */
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;flex-direction:column;}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:90vw;max-height:80vh;border-radius:var(--radius);box-shadow:0 20px 60px rgba(0,0,0,0.5);}
+#lightbox-close{position:absolute;top:20px;right:24px;color:var(--white);font-size:2rem;cursor:pointer;}
+#lightbox-caption{color:rgba(255,255,255,0.7);margin-top:12px;font-size:0.9rem;}
+
+/* ===== FACILITIES ===== */
+.facilities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
+.facility-card{background:var(--white);border-radius:var(--radius-lg);padding:28px 20px;text-align:center;box-shadow:var(--shadow-sm);border:1px solid var(--gray-200);transition:var(--transition);position:relative;overflow:hidden;}
+.facility-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--saffron),var(--green));}
+.facility-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.facility-icon{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,rgba(244,160,18,0.15),rgba(15,122,50,0.1));display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem;color:var(--navy);}
+.facility-card h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:1rem;margin-bottom:6px;}
+.facility-card p{font-size:0.82rem;color:var(--gray-600);line-height:1.5;}
+
+/* ===== ACADEMICS / EXAM SCHEDULE ===== */
+.academics-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+.academics-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--gray-200);}
+.academics-card-header{padding:20px 24px;display:flex;align-items:center;gap:12px;}
+.academics-card-header.navy{background:var(--navy);color:var(--white);}
+.academics-card-header.green{background:var(--green);color:var(--white);}
+.academics-card-header.saffron{background:var(--saffron);color:var(--navy);}
+.academics-card-header i{font-size:1.2rem;}
+.academics-card-header h3{font-family:'Playfair Display',serif;font-size:1.1rem;}
+.academics-card-body{padding:20px 24px;}
+.exam-table{width:100%;border-collapse:collapse;font-size:0.85rem;}
+.exam-table th{background:var(--gray-100);color:var(--navy);padding:8px 10px;text-align:left;font-weight:600;font-size:0.8rem;}
+.exam-table td{padding:8px 10px;border-bottom:1px solid var(--gray-100);color:var(--gray-600);}
+.exam-table tr:last-child td{border-bottom:none;}
+.exam-table tr:hover td{background:rgba(244,160,18,0.04);}
+.stream-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.stream-pill{padding:5px 14px;border-radius:20px;font-size:0.78rem;font-weight:600;}
+.pill-sci{background:rgba(11,37,69,0.1);color:var(--navy);}
+.pill-com{background:rgba(15,122,50,0.1);color:var(--green);}
+.pill-art{background:rgba(244,160,18,0.15);color:#b8760a;}
+
+/* ===== STAFF ===== */
+.staff-filter{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:30px;}
+.staff-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;}
+.staff-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--gray-200);transition:var(--transition);text-align:center;}
+.staff-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.staff-photo-wrap{position:relative;background:linear-gradient(135deg,var(--navy),var(--navy-light));padding-top:24px;}
+.staff-photo{width:90px;height:90px;border-radius:50%;border:3px solid var(--saffron);object-fit:cover;margin:0 auto;display:block;background:var(--navy);}
+.staff-photo-fallback{width:90px;height:90px;border-radius:50%;border:3px solid var(--saffron);background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto;color:rgba(255,255,255,0.6);font-size:2rem;}
+.staff-info{padding:16px;}
+.staff-info h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:3px;}
+.staff-info .designation{font-size:0.78rem;color:var(--green);font-weight:600;margin-bottom:5px;}
+.staff-info .subjects{font-size:0.75rem;color:var(--gray-500);}
+.staff-info .qualification{font-size:0.72rem;color:var(--gray-400);margin-top:4px;}
+
+/* ===== TIMETABLE ===== */
+.timetable-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;justify-content:center;}
+.tt-tab{padding:8px 20px;border-radius:8px;font-size:0.85rem;font-weight:600;border:2px solid var(--gray-200);color:var(--gray-600);transition:var(--transition);}
+.tt-tab.active{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.tt-tab:hover:not(.active){border-color:var(--navy);color:var(--navy);}
+.timetable-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow-sm);}
+.timetable-table{width:100%;border-collapse:collapse;min-width:600px;font-size:0.82rem;}
+.timetable-table th{background:var(--navy);color:var(--white);padding:10px 14px;text-align:center;font-weight:600;font-size:0.78rem;white-space:nowrap;}
+.timetable-table td{padding:9px 14px;border:1px solid var(--gray-200);text-align:center;color:var(--gray-700);}
+.timetable-table tr:nth-child(even) td{background:rgba(244,160,18,0.04);}
+.timetable-table tr:hover td{background:rgba(11,37,69,0.04);}
+.timetable-table td:first-child{background:var(--gray-100);font-weight:600;color:var(--navy);}
+
+/* ===== RESULTS ===== */
+.results-tabs{display:flex;gap:10px;justify-content:center;margin-bottom:30px;flex-wrap:wrap;}
+.result-tab{padding:10px 24px;border-radius:8px;font-weight:600;font-size:0.9rem;border:2px solid var(--gray-200);color:var(--gray-600);transition:var(--transition);}
+.result-tab.active{background:var(--saffron);color:var(--navy);border-color:var(--saffron);}
+.result-tab:hover:not(.active){border-color:var(--saffron);}
+.result-search-bar{display:flex;gap:10px;max-width:500px;margin:0 auto 24px;}
+.result-search-bar input{flex:1;padding:10px 16px;border:2px solid var(--gray-200);border-radius:8px;font-size:0.9rem;font-family:inherit;outline:none;transition:border-color 0.2s;}
+.result-search-bar input:focus{border-color:var(--saffron);}
+.result-search-bar button{padding:10px 20px;background:var(--navy);color:var(--white);border-radius:8px;font-weight:600;transition:var(--transition);}
+.result-search-bar button:hover{background:var(--navy-light);}
+.result-info-banner{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--white);border-radius:var(--radius);padding:16px 24px;margin-bottom:20px;text-align:center;}
+.result-info-banner h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:3px;}
+.result-info-banner p{font-size:0.82rem;opacity:0.8;}
+.result-table-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow-sm);}
+.result-table{width:100%;border-collapse:collapse;min-width:550px;font-size:0.85rem;}
+.result-table th{background:var(--navy);color:var(--white);padding:10px 14px;text-align:left;font-size:0.8rem;font-weight:600;}
+.result-table td{padding:9px 14px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+.result-table tr:hover td{background:rgba(244,160,18,0.05);}
+.result-not-published{text-align:center;padding:60px 20px;}
+.result-not-published i{font-size:3rem;color:var(--gray-300);margin-bottom:16px;}
+.result-not-published p{color:var(--gray-400);font-size:0.95rem;}
+
+/* ===== E-LIBRARY ===== */
+.library-grid{display:grid;grid-template-columns:2fr 1fr;gap:30px;}
+.library-table-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow-sm);}
+.library-table{width:100%;border-collapse:collapse;font-size:0.85rem;}
+.library-table th{background:var(--navy);color:var(--white);padding:10px 14px;text-align:left;font-weight:600;font-size:0.78rem;}
+.library-table td{padding:9px 14px;border-bottom:1px solid var(--gray-100);color:var(--gray-700);}
+.library-table tr:hover td{background:rgba(244,160,18,0.04);}
+.status-available{color:var(--green);font-weight:600;font-size:0.78rem;}
+.status-issued{color:#e53e3e;font-weight:600;font-size:0.78rem;}
+.library-request-card{background:var(--white);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);border:1px solid var(--gray-200);border-top:4px solid var(--green);}
+.library-request-card h3{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:6px;}
+.library-request-card p{font-size:0.82rem;color:var(--gray-500);margin-bottom:20px;}
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:5px;}
+.form-group input{width:100%;padding:9px 12px;border:2px solid var(--gray-200);border-radius:8px;font-size:0.85rem;font-family:inherit;outline:none;transition:border-color 0.2s;}
+.form-group input:focus{border-color:var(--green);}
+.submit-btn{width:100%;padding:11px;background:var(--green);color:var(--white);border-radius:8px;font-weight:600;font-size:0.9rem;transition:var(--transition);}
+.submit-btn:hover{background:var(--green-light);}
+.form-success{display:none;text-align:center;padding:16px;background:rgba(15,122,50,0.1);border-radius:8px;color:var(--green);font-weight:600;font-size:0.9rem;}
+
+/* ===== CONTACT ===== */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.contact-info{display:flex;flex-direction:column;gap:20px;}
+.contact-card{background:var(--white);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);border:1px solid var(--gray-200);display:flex;gap:16px;align-items:flex-start;}
+.contact-icon{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;color:var(--saffron);font-size:1rem;flex-shrink:0;}
+.contact-details h4{font-weight:600;color:var(--navy);margin-bottom:3px;font-size:0.9rem;}
+.contact-details p{font-size:0.83rem;color:var(--gray-600);line-height:1.5;}
+.contact-details a{color:var(--green);transition:color 0.2s;}
+.contact-details a:hover{color:var(--green-light);}
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);height:380px;background:var(--gray-200);}
+.map-wrap iframe{width:100%;height:100%;border:none;}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy);color:rgba(255,255,255,0.8);padding:50px 0 20px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+.footer-brand .nav-logo{width:60px;height:60px;margin-bottom:14px;}
+.footer-brand h3{font-family:'Playfair Display',serif;color:var(--white);font-size:1.1rem;margin-bottom:6px;}
+.footer-brand p{font-size:0.82rem;line-height:1.6;color:rgba(255,255,255,0.6);}
+.footer-col h4{color:var(--saffron);font-weight:600;font-size:0.9rem;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.5px;}
+.footer-col ul li{margin-bottom:8px;}
+.footer-col ul li a{font-size:0.83rem;color:rgba(255,255,255,0.6);transition:color 0.2s;}
+.footer-col ul li a:hover{color:var(--saffron);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.4);}
+
+/* ===== ADMIN PANEL ===== */
+#admin-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9998;align-items:center;justify-content:center;}
+#admin-modal.open{display:flex;}
+.admin-box{background:var(--white);border-radius:var(--radius-lg);padding:32px;width:min(420px,90vw);box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+.admin-box h2{font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:6px;}
+.admin-box p{font-size:0.85rem;color:var(--gray-500);margin-bottom:20px;}
+.admin-box .form-group input{border-radius:8px;}
+.admin-login-btn{width:100%;padding:11px;background:var(--navy);color:var(--white);border-radius:8px;font-weight:600;transition:var(--transition);margin-top:4px;}
+.admin-login-btn:hover{background:var(--navy-light);}
+.admin-close{float:right;color:var(--gray-400);font-size:1.2rem;cursor:pointer;}
+.admin-settings{display:none;flex-direction:column;gap:14px;margin-top:16px;}
+.admin-toggle-row{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--gray-100);border-radius:8px;}
+.admin-toggle-row label{font-size:0.88rem;font-weight:600;color:var(--navy);}
+.toggle-switch{position:relative;width:46px;height:24px;}
+.toggle-switch input{opacity:0;width:0;height:0;}
+.toggle-slider{position:absolute;inset:0;background:var(--gray-300);border-radius:12px;cursor:pointer;transition:0.3s;}
+.toggle-slider::before{content:'';position:absolute;width:18px;height:18px;left:3px;top:3px;background:var(--white);border-radius:50%;transition:0.3s;}
+.toggle-switch input:checked + .toggle-slider{background:var(--green);}
+.toggle-switch input:checked + .toggle-slider::before{transform:translateX(22px);}
+
+/* ===== SCROLL TO TOP ===== */
+#scrollTop{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--saffron);color:var(--navy);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow-md);z-index:900;transition:var(--transition);}
+#scrollTop.show{display:flex;}
+#scrollTop:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .notices-wrapper{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;gap:30px;}
+  .about-image-wrap{max-width:400px;margin:0 auto;}
+  .academics-grid{grid-template-columns:1fr;}
+  .library-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .nav-right .nav-admin-btn{display:none;}
+  .hamburger{display:flex;}
+  .section{padding:55px 0;}
+  .hero-stats{gap:14px;}
+  .staff-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+  .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+  .topbar-left{display:none;}
+  .footer-grid{grid-template-columns:1fr;}
+  .school-info-list{grid-template-columns:1fr;}
+  .result-search-bar{flex-direction:column;}
+}
+@media(max-width:480px){
+  .hero-actions{flex-direction:column;align-items:center;}
+  .hero-stat{padding:10px 16px;}
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div id="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <div class="topbar-item"><i class="fas fa-map-marker-alt"></i><span>Biranarasinghpur, Boudh, Odisha – 762024</span></div>
+        <div class="topbar-item"><i class="fas fa-phone"></i><span>9437412715</span></div>
+        <div class="topbar-item"><i class="fas fa-envelope"></i><span>scgovthssbiranarasinghpur@gmail.com</span></div>
+      </div>
+      <div class="topbar-right">
+        <span class="odia" style="color:rgba(255,255,255,0.6);font-size:0.78rem;">ଶିକ୍ଷା · ଜ୍ଞାନ · ସଫଳତା</span>
+        <button class="nav-admin-btn" onclick="openAdminModal()" style="font-size:0.75rem;padding:4px 10px;">⚙ Admin</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <img class="nav-logo" id="navLogo" src="https://drive.google.com/thumbnail?id=1KS1UgVsX4Hkxg6qWe6ADPpfOiVGesBBy&sz=w200" alt="School Logo" onerror="this.style.display='none';document.getElementById('navLogoFallback').style.display='flex'"/>
+      <div class="nav-logo-fallback" id="navLogoFallback" style="display:none;"><i class="fas fa-school"></i></div>
+      <div class="nav-school-name">
+        <h1>Sadhu Charan Govt. HSS</h1>
+        <p class="odia">ସାଧୁ ଚରଣ ସରକାରୀ ଉଚ୍ଚ ମାଧ୍ୟମିକ ବିଦ୍ୟାଳୟ</p>
+      </div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#notices">Notices</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#academics">Academics</a>
+      <a href="#staff">Staff</a>
+      <a href="#timetable">Timetable</a>
+      <a href="#results">Results</a>
+      <a href="#library">Library</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-admin-btn" onclick="openAdminModal()"><i class="fas fa-lock"></i> Admin</button>
+      <div class="hamburger" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-menu-close" onclick="toggleMobileMenu()"><i class="fas fa-times"></i></span>
+  <div style="margin-top:40px;">
+    <div style="text-align:center;margin-bottom:30px;">
+      <p style="color:var(--saffron);font-family:'Playfair Display',serif;font-size:1.1rem;">Sadhu Charan Govt. HSS</p>
+      <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;" class="odia">ବୀରନରସିଂହପୁର</p>
+    </div>
+    <a href="#notices" onclick="toggleMobileMenu()">📋 Notices</a>
+    <a href="#about" onclick="toggleMobileMenu()">🏫 About</a>
+    <a href="#gallery" onclick="toggleMobileMenu()">🖼 Gallery</a>
+    <a href="#academics" onclick="toggleMobileMenu()">📚 Academics</a>
+    <a href="#staff" onclick="toggleMobileMenu()">👨‍🏫 Staff</a>
+    <a href="#timetable" onclick="toggleMobileMenu()">🕐 Timetable</a>
+    <a href="#results" onclick="toggleMobileMenu()">📊 Results</a>
+    <a href="#library" onclick="toggleMobileMenu()">📖 Library</a>
+    <a href="#contact" onclick="toggleMobileMenu()">📞 Contact</a>
+    <a href="javascript:void(0)" onclick="toggleMobileMenu();openAdminModal()">⚙ Admin Login</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-slider" id="heroSlider">
+    <!-- Slides loaded from Gallery sheet; fallback below -->
+    <div class="hero-slide active" id="heroFallback">
+      <div class="hero-slide-bg"></div>
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🎓 Established 07/07/1977— Biranarasinghpur, Odisha</div>
+    <h1 class="hero-title">Sadhu Charan Govt.<br/>Higher Secondary School</h1>
+    <p class="hero-subtitle odia">ସାଧୁ ଚରଣ ସରକାରୀ ଉଚ୍ଚ ମାଧ୍ୟମିକ ବିଦ୍ୟାଳୟ, ବୀରନରସିଂହପୁର</p>
+    <p class="hero-motto">"Education · Wisdom · Success"</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num" id="statStudents">—</span><div class="hero-stat-label">Students</div></div>
+      <div class="hero-stat"><span class="hero-stat-num" id="statStaff">—</span><div class="hero-stat-label">Staff Members</div></div>
+      <div class="hero-stat"><span class="hero-stat-num">IX–XII</span><div class="hero-stat-label">Classes Offered</div></div>
+      <div class="hero-stat"><span class="hero-stat-num">1</span><div class="hero-stat-label">Stream</div></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#about" class="btn btn-primary"><i class="fas fa-info-circle"></i> About Us</a>
+      <a href="#results" class="btn btn-outline"><i class="fas fa-poll"></i> View Results</a>
+    </div>
+  </div>
+  <div class="hero-slider-dots" id="heroSliderDots"></div>
+  <div class="hero-scroll"><i class="fas fa-chevron-down"></i><span>Scroll</span></div>
+</section>
+
+<!-- NOTICES -->
+<section id="notices" class="section section-alt">
+  <div class="container">
+    <p class="badge badge-saffron" style="display:block;text-align:center;margin-bottom:8px;">📋 LATEST UPDATES</p>
+    <h2 class="section-title">Notice Board <span class="odia" style="font-size:1.4rem;">/ ସୂଚନା ଫଳକ</span></h2>
+    <div class="section-divider"></div>
+    <div class="notices-wrapper">
+      <div class="notices-main">
+        <div class="notices-header">
+          <h3><i class="fas fa-bullhorn" style="margin-right:8px;"></i>Official Notices &amp; Announcements</h3>
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="notices-ticker" id="noticesList">
+          <div class="loading-spinner"><i class="fas fa-spinner"></i></div>
+        </div>
+      </div>
+      <div class="notice-side">
+        <div class="quick-card">
+          <h4>🏫 School Timings</h4>
+          <p><strong>Morning:</strong> 6:30 AM – 10:00 AM<br/><strong>Days:</strong> Monday to Saturday<br/><strong class="odia">ସ୍କୁଲ  ସମୟ:</strong> <span class="odia">ସୋମ – ଶନି</span></p>
+        </div>
+        <div class="quick-card">
+          <h4>📞 Important Contacts</h4>
+          <p><strong>Headmaster:</strong> 9437412715<br/><strong>Email:</strong> scgovthssbiranarasinghpur<br/>@gmail.com</p>
+        </div>
+        <div class="admission-alert" id="admissionAlert" style="display:none;">
+          <h4>🎓 Admissions Open!</h4>
+          <p class="odia">ଆଡମିଶନ ଚାଲୁ ଅଛି</p>
+          <p>Classes IX & XI — 2025–26</p>
+          <a href="https://forms.gle/DHjqc9UWLAj8DteL6" target="_blank" class="btn btn-outline" style="color:var(--white);border-color:var(--white);margin-top:6px;font-size:0.82rem;padding:8px 16px;">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="section">
+  <div class="container">
+    <p class="badge badge-green" style="display:block;text-align:center;margin-bottom:8px;">🏆 PRIDE OF OUR SCHOOL</p>
+    <h2 class="section-title">Achievements &amp; Honours <span class="odia" style="font-size:1.4rem;">/ ଉପଲବ୍ଧି</span></h2>
+    <div class="section-divider"></div>
+    <div class="achievements-grid" id="achievementsGrid">
+      <div class="loading-spinner"><i class="fas fa-spinner"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / HM MESSAGE -->
+<section id="about" class="section section-alt">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap" id="hmPhotoWrap">
+        <div class="about-img-frame">
+          <img id="hmPhoto" src="" alt="Headmaster" style="display:none;"/>
+          <div id="hmPhotoFallback" style="width:100%;height:380px;background:linear-gradient(135deg,var(--navy),var(--navy-light));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;">
+            <i class="fas fa-user-tie" style="font-size:4rem;color:rgba(255,255,255,0.3);"></i>
+            <p style="color:rgba(255,255,255,0.4);font-size:0.85rem;">Headmaster Photo</p>
+          </div>
+        </div>
+        <div class="about-img-badge">
+          <span>Shaping Future</span>
+          <small style="color:rgba(255,255,255,0.7);font-size:0.7rem;"> With Education</small>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="badge badge-navy">🏫 About Our School / ଆମ ବିଦ୍ୟାଳୟ</span>
+        <h2 style="margin-top:12px;">Message from the <br/><em style="color:var(--saffron);">Principal</em></h2>
+        <div class="about-quote" id="hmMessageText">
+          <i class="fas fa-spinner fa-spin"></i> Loading...
+        </div>
+        <p class="hm-name" id="hmName">—</p>
+        <p class="hm-desig" id="hmDesig">Headmaster, Sadhu Charan Govt. HSS</p>
+        <div class="school-info-list">
+          <div class="school-info-item"><i class="fas fa-map-marker-alt"></i>Biranarasinghpur, Boudh</div>
+          <div class="school-info-item"><i class="fas fa-graduation-cap"></i>Classes IX to XII</div>
+          <div class="school-info-item"><i class="fas fa-book"></i>Arts Stream (Class XI & XII)</div>
+          <div class="school-info-item"><i class="fas fa-university"></i>Govt. Aided School</div>
+          <div class="school-info-item"><i class="fas fa-certificate"></i>Odisha Board (CHSE/BSE)</div>
+          <div class="school-info-item"><i class="fas fa-language"></i>Medium: Odia &amp; English</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <div class="container">
+    <p class="badge badge-saffron" style="display:block;text-align:center;margin-bottom:8px;">📸 SCHOOL LIFE</p>
+    <h2 class="section-title">Gallery <span class="odia" style="font-size:1.4rem;">/ ଗ୍ୟାଲେରି</span></h2>
+    <div class="section-divider"></div>
+    <div class="gallery-filter" id="galleryFilter">
+      <button class="gallery-filter-btn active" data-cat="all">All / ସବୁ</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="loading-spinner" style="grid-column:1/-1;"><i class="fas fa-spinner"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <span id="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></span>
+  <img id="lightbox-img" src="" alt=""/>
+  <p id="lightbox-caption"></p>
+</div>
+
+<!-- FACILITIES -->
+<section id="facilities" class="section section-alt">
+  <div class="container">
+    <p class="badge badge-green" style="display:block;text-align:center;margin-bottom:8px;">🏗 INFRASTRUCTURE</p>
+    <h2 class="section-title">Facilities <span class="odia" style="font-size:1.4rem;">/ ସୁବିଧା</span></h2>
+    <div class="section-divider"></div>
+    <div class="facilities-grid" id="facilitiesGrid">
+      <div class="loading-spinner" style="grid-column:1/-1;"><i class="fas fa-spinner"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMICS -->
+<section id="academics" class="section">
+  <div class="container">
+    <p class="badge badge-navy" style="display:block;text-align:center;margin-bottom:8px;">📚 ACADEMICS</p>
+    <h2 class="section-title">Academics <span class="odia" style="font-size:1.4rem;">/ ଶୈକ୍ଷଣିକ</span></h2>
+    <div class="section-divider"></div>
+    <div class="academics-grid">
+      <div class="academics-card">
+        <div class="academics-card-header navy">
+          <i class="fas fa-layer-group"></i>
+          <h3>Streams Offered / ଶାଖା </h3>
+        </div>
+        <div class="academics-card-body">
+          <p style="font-size:0.85rem;color:var(--gray-600);margin-bottom:14px;">Our school offers Arts stream for Class XI &amp; XII students:</p>
+          <div class="stream-pills">
+            <span class="stream-pill pill-art">🎨 Arts / କଳା</span>
+          </div>
+          <div style="margin-top:16px;padding:12px;background:var(--gray-100);border-radius:8px;">
+            <p style="font-size:0.82rem;color:var(--gray-600);"><strong>Class XI &amp; XII:</strong> Arts stream with Odia, English, History, Political Science, Economics, Sociology subjects.<br/><strong class="odia">ଶ୍ରେଣୀ ୧୧ ଓ ୧୨:</strong> <span class="odia">କଳା</span></p>
+            <p style="font-size:0.82rem;color:var(--gray-600);margin-top:6px;"><strong>Class IX &amp; X:</strong> Secondary level with all core subjects.<br/><strong class="odia">ଶ୍ରେଣୀ ୯ ଓ ୧୦:</strong> <span class="odia">ମାଧ୍ୟମିକ ସ୍ତର</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="academics-card" id="examScheduleCard">
+        <div class="academics-card-header saffron">
+          <i class="fas fa-calendar-alt"></i>
+          <h3>Class IX Exam Schedule</h3>
+        </div>
+        <div class="academics-card-body" id="examScheduleBody">
+          <div class="loading-spinner"><i class="fas fa-spinner"></i></div>
+        </div>
+      </div>
+      <div class="academics-card">
+      <div class="academics-card-header badge-green">
+        <i class="fas fa-calendar-alt"></i>
+        <h3>Class X Exam Schedule</h3>
+      </div>
+      <div class="academics-card-body" id="examScheduleBody10">
+        <div class="loading-spinner"><i class="fas fa-spinner"></i></div>
+      </div>
+      </div>
+      <div class="academics-card">
+        <div class="academics-card-header navy">
+          <i class="fas fa-calendar-check"></i>
+          <h3>Class XI Exam Schedule</h3>
+        </div>
+        <div class="academics-card-body" id="examScheduleBody11">
+          <div class="loading-spinner"><i class="fas fa-spinner"></i></div>
+        </div>
+      </div>
+      <div class="academics-card">
+        <div class="academics-card-header green">
+          <i class="fas fa-calendar-check"></i>
+          <h3>Class XII Exam Schedule</h3>
+        </div>
+        <div class="academics-card-body" id="examScheduleBody12">
+          <div class="loading-spinner"><i class="fas fa-spinner"></i></div>
+        </div>
+      </div>
+      <div class="academics-card">
+        <div class="academics-card-header green">
+          <i class="fas fa-book-open"></i>
+          <h3>Utkarsha Exam / ଉତ୍କର୍ଷ ପରୀକ୍ଷା</h3>
+        </div>
+        <div class="academics-card-body" id="utkarshaBody">
+          <div class="loading-spinner"><i class="fas fa-spinner"></i></div>
+        </div>
+      </div>
+      <div class="academics-card">
+        <div class="academics-card-header navy">
+          <i class="fas fa-info-circle"></i>
+          <h3>Academic Calendar</h3>
+        </div>
+        <div class="academics-card-body">
+          <table class="exam-table">
+            <tr><th>Event</th><th>Period</th></tr>
+            <tr><td>Annual Exam</td><td>Feb – Mar</td></tr>
+            <tr><td>Half Yearly</td><td>Sep – Oct</td></tr>
+            <tr><td>Unit Tests</td><td>Quarterly</td></tr>
+            <tr><td>Summer Vacation</td><td>May – Jun</td></tr>
+            <tr><td>Puja Vacation</td><td>Oct</td></tr>
+            <tr><td>Admission Session</td><td>Jun – Jul</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF -->
+<section id="staff" class="section section-alt">
+  <div class="container">
+    <p class="badge badge-navy" style="display:block;text-align:center;margin-bottom:8px;">👨‍🏫 OUR TEAM</p>
+    <h2 class="section-title">Teaching Staff <span class="odia" style="font-size:1.4rem;">/ ଶିକ୍ଷକ ମଣ୍ଡଳ</span></h2>
+    <div class="section-divider"></div>
+    <div class="staff-filter" id="staffFilter">
+      <button class="gallery-filter-btn active" data-cat="all">All / ସମସ୍ତ</button>
+    </div>
+    <div class="staff-grid" id="staffGrid">
+      <div class="loading-spinner" style="grid-column:1/-1;"><i class="fas fa-spinner"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMETABLE -->
+<section id="timetable" class="section">
+  <div class="container">
+    <p class="badge badge-saffron" style="display:block;text-align:center;margin-bottom:8px;">🕐 SCHEDULE</p>
+    <h2 class="section-title">Class Timetable <span class="odia" style="font-size:1.4rem;">/ ସମୟ ସୂଚୀ</span></h2>
+    <div class="section-divider"></div>
+    <div class="timetable-tabs" id="timetableTabs">
+      <button class="tt-tab active" data-class="XA" onclick="loadTimetable('XA',this)">Class XA</button>
+      <button class="tt-tab" data-class="XB" onclick="loadTimetable('XB',this)">Class XB</button>
+      <button class="tt-tab" data-class="IXA" onclick="loadTimetable('IXA',this)">Class IXA</button>
+      <button class="tt-tab" data-class="IXB" onclick="loadTimetable('IXB',this)">Class IXB</button>
+      <button class="tt-tab" data-class="Teacher" onclick="loadTimetable('Teacher',this)">Teacher TT</button>
+    </div>
+    <div class="timetable-wrap">
+      <div id="timetableContent"><div class="loading-spinner"><i class="fas fa-spinner"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="section section-alt">
+  <div class="container">
+    <p class="badge badge-green" style="display:block;text-align:center;margin-bottom:8px;">📊 EXAM RESULTS</p>
+    <h2 class="section-title">Exam Results <span class="odia" style="font-size:1.4rem;">/ ପରୀକ୍ଷା ଫଳ</span></h2>
+    <div class="section-divider"></div>
+    <div class="results-tabs">
+      <button class="result-tab active" onclick="switchResult('9',this)">Class IX</button>
+      <button class="result-tab" onclick="switchResult('10',this)">Class X</button>
+    </div>
+    <div id="resultContent">
+      <div class="result-not-published">
+        <i class="fas fa-lock"></i>
+        <p>Results will be published soon. / <span class="odia">ଫଳ ଶୀଘ୍ର ପ୍ରକାଶ ପାଇବ।</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- E-LIBRARY -->
+<section id="library" class="section">
+  <div class="container">
+    <p class="badge badge-navy" style="display:block;text-align:center;margin-bottom:8px;">📖 E-LIBRARY</p>
+    <h2 class="section-title">School Library <span class="odia" style="font-size:1.4rem;">/ ପୁସ୍ତକାଳୟ</span></h2>
+    <div class="section-divider"></div>
+    <div class="library-grid">
+      <div>
+        <h3 style="font-family:'Playfair Display',serif;color:var(--navy);margin-bottom:16px;">📚 Book Catalogue</h3>
+        <div class="library-table-wrap">
+          <table class="library-table">
+            <thead>
+              <tr><th>#</th><th>Book Name</th><th>Author</th><th>Subject</th><th>Book No.</th><th>Status</th></tr>
+            </thead>
+            <tbody id="libraryTableBody">
+              <tr><td colspan="6" class="loading-spinner"><i class="fas fa-spinner fa-spin"></i> Loading books...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="library-request-card">
+        <h3>📬 Request a Book</h3>
+        <p class="odia">ବହି ଅନୁରୋଧ କରନ୍ତୁ</p>
+        <div class="form-group">
+          <label>Your Name / ନାମ</label>
+          <input type="text" id="libName" placeholder="Enter your full name"/>
+        </div>
+        <div class="form-group">
+          <label>Roll No. / ରୋଲ ନଂ</label>
+          <input type="text" id="libRoll" placeholder="Enter roll number"/>
+        </div>
+        <div class="form-group">
+          <label>Book Name / ବହି ନାମ</label>
+          <input type="text" id="libBook" placeholder="Enter book name"/>
+        </div>
+        <button class="submit-btn" onclick="submitLibraryRequest()"><i class="fas fa-paper-plane"></i> Submit Request</button>
+        <div class="form-success" id="libSuccess">✅ Request submitted successfully!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <p class="badge badge-saffron" style="display:block;text-align:center;margin-bottom:8px;">📞 GET IN TOUCH</p>
+    <h2 class="section-title">Contact Us <span class="odia" style="font-size:1.4rem;">/ ଯୋଗାଯୋଗ</span></h2>
+    <div class="section-divider"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="contact-details">
+            <h4>Address / ଠିକଣା</h4>
+            <p>At/Po – Biranarasinghpur<br/>Dist – Boudh, Pin – 762024<br/>Odisha, India</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-details">
+            <h4>Phone / ଫୋନ</h4>
+            <p><a href="tel:9437412715">+91 9437412715</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-details">
+            <h4>Email / ଇମେଲ</h4>
+            <p><a href="mailto:scgovthssbiranarasinghpur@gmail.com">scgovthssbiranarasinghpur<br/>@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-clock"></i></div>
+          <div class="contact-details">
+            <h4>School Hours / ସ୍କୁଲ ସମୟ</h4>
+            <p>Monday – Saturday<br/>6:00 AM to 11:00 AM</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon"><i class="fas fa-edit"></i></div>
+          <div class="contact-details">
+            <h4>Admission Form</h4>
+            <p><a href="https://forms.gle/DHjqc9UWLAj8Dte6" target="_blank">Click here to apply online →</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://maps.google.com/maps?q=Biranarasinghpur,Boudh,Odisha&output=embed" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="nav-logo" src="https://drive.google.com/thumbnail?id=1KS1UgVsX4Hkxg6qWe6ADPpfOiVGesBBy&sz=w200" alt="Logo" onerror="this.style.display='none'"/>
+        <h3>Sadhu Charan Govt. HSS</h3>
+        <p class="odia" style="margin-bottom:6px;">ସାଧୁ ଚରଣ ସରକାରୀ ଉଚ୍ଚ ମାଧ୍ୟମିକ ବିଦ୍ୟାଳୟ</p>
+        <p>Biranarasinghpur, Boudh, Odisha – 762024<br/>Empowering students through quality education.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#notices">Notice Board</a></li>
+          <li><a href="#about">About School</a></li>
+          <li><a href="#staff">Our Staff</a></li>
+          <li><a href="#results">Exam Results</a></li>
+          <li><a href="#library">E-Library</a></li>
+          <li><a href="https://forms.gle/DHjqc9UWLAj8DteL" target="_blank">Admission Form</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Academics</h4>
+        <ul>
+          <li><a href="#academics">Streams Offered</a></li>
+          <li><a href="#timetable">Timetable</a></li>
+          <li><a href="#academics">Exam Schedule</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Sadhu Charan Govt. Higher Secondary School, Biranarasinghpur. All rights reserved.</p>
+      <p style="color:rgba(255,255,255,0.3);">Built with ❤️ for education</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fas fa-arrow-up"></i></button>
+
+<!-- ADMIN MODAL -->
+<div id="admin-modal">
+  <div class="admin-box">
+    <span class="admin-close" onclick="closeAdminModal()"><i class="fas fa-times"></i></span>
+    <h2>⚙ Admin Login</h2>
+    <p>Enter password to access settings panel.</p>
+    <div id="adminLoginForm">
+      <div class="form-group">
+        <label>Password / ପାସୱର୍ଡ</label>
+        <input type="password" id="adminPass" placeholder="Enter admin password" onkeydown="if(event.key==='Enter')checkAdmin()"/>
+      </div>
+      <button class="admin-login-btn" onclick="checkAdmin()"><i class="fas fa-unlock"></i> Login</button>
+      <p id="adminError" style="color:red;font-size:0.8rem;margin-top:8px;display:none;">❌ Wrong password!</p>
+    </div>
+    <div class="admin-settings" id="adminSettings">
+      <p style="font-size:0.82rem;color:var(--gray-500);">Toggle settings — changes saved to Site Settings sheet via Admin.</p>
+      <div class="admin-toggle-row">
+        <label>Admission Open / ଭର୍ତ୍ତି</label>
+        <label class="toggle-switch"><input type="checkbox" id="toggleAdmission" onchange="updateSetting('admissionopen',this.checked)"/><span class="toggle-slider"></span></label>
+      </div>
+      <div class="admin-toggle-row">
+        <label>Show Exam Schedule / ପରୀକ୍ଷା ସୂଚୀ</label>
+        <label class="toggle-switch"><input type="checkbox" id="toggleExam" onchange="updateSetting('showexamschedule',this.checked)"/><span class="toggle-slider"></span></label>
+      </div>
+      <div class="admin-toggle-row">
+        <label>Class IX Result Published</label>
+        <label class="toggle-switch"><input type="checkbox" id="toggleResult9" onchange="updateSetting('result9',this.checked)"/><span class="toggle-slider"></span></label>
+      </div>
+      <div class="admin-toggle-row">
+        <label>Class X Result Published</label>
+        <label class="toggle-switch"><input type="checkbox" id="toggleResult10" onchange="updateSetting('result10',this.checked)"/><span class="toggle-slider"></span></label>
+      </div>
+      <a href="https://docs.google.com/spreadsheets/d/1h9Vjtdj3GA65HulfRGoHCi8kAPAgorPl/edit#gid=76130970" target="_blank" class="btn btn-primary" style="justify-content:center;margin-top:8px;"><i class="fas fa-external-link-alt"></i> Open Settings Sheet</a>
+      <button onclick="sessionStorage.removeItem('siteAdminOk');closeAdminModal();location.reload();" style="color:var(--gray-400);font-size:0.8rem;margin-top:4px;text-align:center;width:100%;">Logout</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== CONFIG =====
+const SHEET_BASE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_5ulKuwyDAuaUjxX3kH0hQWVFEhYvWDNBoS5UBfQvSvlKjRcPNb5naBK3m_YscA/pub?gid=XXXX&single=true&output=csv';
+const GID = {
+  notices:      '110844054',
+  staff:        '1172591736',
+  facilities:   '1679101711',
+  settings:     '76130970',
+  gallery:      '1545536010',
+  examClass9:   '1295649872',
+  examClass10:  '645966616',
+  examClass11:  '1826556062',
+  examClass12:  '695641071',
+  utkarsha:     '1341213419',
+  achievements: '1449226154',
+  events:       '1735110485',
+  hmMessage:    '93224856'
+};
+const RESULT_BASE9  = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLVOg6FSmSY8rAcGpUhnIFonQcGsZKnJP9IXokz6dlDKIUf3qGihIk8KvPScTaviTjNy_QQGCjeo-j/pub?gid=786477897&single=true&output=csv';
+const RESULT_BASE10 = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTubVaQRzGGvFyIS8Ebt-c2crdywDf9yW8xX8JgOy3W90hT6lkvgQfbCDDIG_QKZspx6QVxr0HlQaFQ/pub?gid=786477897&single=true&output=csv';
+const TT_BASE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRRnf-b78_EhirxM2vrr8Lz8HDFLKQNgPsb_o3xXj63wPx178sJtLiqbNeo0dafWA/pub?gid=XXXX&single=true&output=csv';
+const TT_GID = { XA:'1021108185', XB:'1205146323', IXA:'1314939061', IXB:'1115553526', Teacher:'182288007' };
+const LIB_BASE = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ_5ulKuwyDAuaUjxX3kH0hQWVFEhYvWDNBoS5UBfQvSvlKjRcPNb5naBK3m_YscA/pub?gid=1114562715&single=true&output=csv';
+const LIB_SCRIPT = 'https://script.google.com/macros/s/AKfycbyG5W4Wi1hYE3jqHjYb19jw9yeq5hcigXh185eKOANNfv6QCsOyqRKEslW3u4slQ7Df9g/exec';
+const ADMIN_PASS = 'scghss@2025';
+
+// ===== HELPERS =====
+function sheetURL(gid){ return SHEET_BASE.replace('XXXX', gid); }
+function ttURL(cls){ return TT_BASE.replace('XXXX', TT_GID[cls]); }
+
+async function fetchCSV(url){
+  const r = await fetch(url);
+  const t = await r.text();
+  return parseCSV(t);
+}
+
+function parseCSV(text){
+  const rows = [];
+  const lines = text.split('\n');
+  for(let line of lines){
+    const row = [];
+    let inQ = false, cell = '';
+    for(let ch of line){
+      if(ch==='"'){ inQ=!inQ; }
+      else if(ch===','&&!inQ){ row.push(cell.trim()); cell=''; }
+      else { cell+=ch; }
+    }
+    row.push(cell.trim());
+    rows.push(row);
+  }
+  return rows;
+}
+
+function normKey(k){ return (k||'').toLowerCase().replace(/[\s_]+/g,''); }
+function driveThumb(url){ const m=(url||'').match(/[-\w]{25,}/); return m?`https://drive.google.com/thumbnail?id=${m[0]}&sz=w400`:''; }
+
+// ===== SITE SETTINGS =====
+let siteSettings = {};
+async function loadSettings(){
+  try{
+    const rows = await fetchCSV(sheetURL(GID.settings));
+    for(let i=1;i<rows.length;i++){
+      const k=normKey(rows[i][0]), v=(rows[i][1]||'').toLowerCase().trim();
+      siteSettings[k] = (v==='true'||v==='yes'||v==='1');
+    }
+    applySettings();
+  }catch(e){ console.warn('Settings load failed',e); }
+}
+
+function applySettings(){
+  // Admission alert
+  const admEl = document.getElementById('admissionAlert');
+  if(siteSettings['admissionopen']) admEl.style.display='block';
+  else admEl.style.display='none';
+  // Sync admin toggles if open
+  const el9 = document.getElementById('toggleResult9');
+  const el10 = document.getElementById('toggleResult10');
+  const elAdm = document.getElementById('toggleAdmission');
+  const elExam = document.getElementById('toggleExam');
+  if(el9) el9.checked = !!siteSettings['result9'];
+  if(el10) el10.checked = !!siteSettings['result10'];
+  if(elAdm) elAdm.checked = !!siteSettings['admissionopen'];
+  if(elExam) elExam.checked = !!siteSettings['showexamschedule'];
+}
+
+// ===== NOTICES =====
+async function loadNotices(){
+  const el = document.getElementById('noticesList');
+  try{
+    const rows = await fetchCSV(sheetURL(GID.notices));
+    if(rows.length<2){ el.innerHTML='<div class="error-msg">No notices found.</div>'; return; }
+    let html='';
+    for(let i=3;i<rows.length;i++){
+      const r=rows[i];
+      if(!r[0]&&!r[1]) continue;
+      const title=r[0]||'', date=r[1]||'', link=r[2]||'', isNew=(r[3]||'').toLowerCase()==='yes';
+      html+=`<div class="notice-item">
+        <div class="notice-dot ${isNew?'new':''}"></div>
+        <div class="notice-text">
+          <div class="notice-title">${title}</div>
+          <div class="notice-date"><i class="fas fa-calendar-alt" style="margin-right:4px;color:var(--saffron);"></i>${date}</div>
+          ${link?`<a href="${link}" target="_blank" class="notice-link"><i class="fas fa-download"></i> Download / View</a>`:''}
+        </div>
+      </div>`;
+    }
+    el.innerHTML = html || '<div class="error-msg">No notices at this time.</div>';
+  }catch(e){ el.innerHTML='<div class="error-msg">Unable to load notices.</div>'; }
+}
+
+// ===== ACHIEVEMENTS =====
+const ACHIEVEMENT_ICONS = ['fa-trophy','fa-medal','fa-star','fa-award','fa-crown','fa-certificate','fa-graduation-cap','fa-book'];
+async function loadAchievements(){
+  const el = document.getElementById('achievementsGrid');
+  try{
+    const rows = await fetchCSV(sheetURL(GID.achievements));
+    if(rows.length<2){ el.innerHTML='<div class="error-msg">No achievements found.</div>'; return; }
+    let html='';
+    for(let i=3;i<rows.length;i++){
+      const r=rows[i];
+      if(!r[0]) continue;
+      const title=r[0]||'', desc=r[1]||'', year=r[2]||'', icon=ACHIEVEMENT_ICONS[i%ACHIEVEMENT_ICONS.length];
+      html+=`<div class="achievement-card fade-in">
+        <div class="achievement-icon"><i class="fas ${icon}"></i></div>
+        <div class="achievement-body">
+          <h3>${title}</h3>
+          <p>${desc}</p>
+          ${year?`<span class="achievement-year">📅 ${year}</span>`:''}
+        </div>
+      </div>`;
+    }
+    el.innerHTML = html || '<div class="error-msg">No achievements at this time.</div>';
+    observeFadeIn();
+  }catch(e){ el.innerHTML='<div class="error-msg">Unable to load achievements.</div>'; }
+}
+
+// ===== HM MESSAGE =====
+async function loadHMMessage(){
+  try{
+    const rows = await fetchCSV(sheetURL(GID.hmMessage));
+    // Sheet has title rows 1-2, header row 3, data row 4 (index 3)
+    const dataIdx = rows.length > 3 ? 3 : (rows.length > 1 ? 1 : 0);
+    if(rows.length < 2) return;
+    const r=rows[dataIdx];
+    const name=r[0]||'', desig=r[1]||'', photo=r[2]||'', msg=r[3]||'';
+    if(name) document.getElementById('hmName').textContent=name;
+    if(desig) document.getElementById('hmDesig').textContent=desig;
+    if(msg) document.getElementById('hmMessageText').textContent=msg;
+    if(photo){
+      const thumb=driveThumb(photo);
+      if(thumb){
+        const imgEl=document.getElementById('hmPhoto');
+        imgEl.src=thumb;
+        imgEl.style.display='block';
+        document.getElementById('hmPhotoFallback').style.display='none';
+      }
+    }
+  }catch(e){ console.warn('HM message load failed'); }
+}
+
+// ===== GALLERY =====
+let galleryData=[];
+async function loadGallery(){
+  const el = document.getElementById('galleryGrid');
+  const filterEl = document.getElementById('galleryFilter');
+  try{
+    const rows = await fetchCSV(sheetURL(GID.gallery));
+    galleryData=[];
+    const cats = new Set(['all']);
+    for(let i=1;i<rows.length;i++){
+      const r=rows[i];
+      if(!r[0]&&!r[1]) continue;
+      const url=r[0]||'', caption=r[1]||'', category=r[2]||'General', isHero=(r[3]||'').toLowerCase()==='yes';
+      const thumb=driveThumb(url);
+      if(thumb){ galleryData.push({thumb,caption,category,isHero,original:url}); cats.add(category); }
+    }
+    // Build filters
+    let fhtml='<button class="gallery-filter-btn active" data-cat="all" onclick="filterGallery(\'all\',this)">All</button>';
+    cats.forEach(c=>{ if(c!=='all') fhtml+=`<button class="gallery-filter-btn" data-cat="${c}" onclick="filterGallery('${c}',this)">${c}</button>`; });
+    filterEl.innerHTML=fhtml;
+    renderGallery(galleryData);
+    loadHeroSlider(galleryData.filter(g=>g.isHero));
+  }catch(e){ el.innerHTML='<div class="error-msg">Unable to load gallery.</div>'; }
+}
+
+function renderGallery(items){
+  const el = document.getElementById('galleryGrid');
+  if(!items.length){ el.innerHTML='<div class="error-msg" style="grid-column:1/-1;">No photos found.</div>'; return; }
+  el.innerHTML = items.map((g,i)=>`
+    <div class="gallery-item fade-in" onclick="openLightbox('${g.thumb}','${g.caption}')">
+      <img src="${g.thumb}" alt="${g.caption}" loading="lazy"/>
+      <div class="gallery-overlay"><span class="gallery-caption">${g.caption}</span></div>
+    </div>`).join('');
+  observeFadeIn();
+}
+
+function filterGallery(cat, btn){
+  document.querySelectorAll('#galleryFilter .gallery-filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGallery(cat==='all'?galleryData:galleryData.filter(g=>g.category===cat));
+}
+
+function openLightbox(src,caption){ const lb=document.getElementById('lightbox'); document.getElementById('lightbox-img').src=src; document.getElementById('lightbox-caption').textContent=caption; lb.classList.add('open'); }
+function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
+document.getElementById('lightbox').addEventListener('click',e=>{ if(e.target===e.currentTarget)closeLightbox(); });
+
+// ===== HERO SLIDER =====
+let heroSlides=[], heroIdx=0, heroTimer=null;
+function loadHeroSlider(items){
+  const slider=document.getElementById('heroSlider');
+  const dotsEl=document.getElementById('heroSliderDots');
+  if(!items.length) return;
+  slider.innerHTML='';
+  dotsEl.innerHTML='';
+  heroSlides=items;
+  items.forEach((item,i)=>{
+    const slide=document.createElement('div');
+    slide.className='hero-slide'+(i===0?' active':'');
+    slide.innerHTML=`<img src="${item.thumb}" alt="${item.caption}"/>`;
+    slider.appendChild(slide);
+    const dot=document.createElement('div');
+    dot.className='hero-dot'+(i===0?' active':'');
+    dot.onclick=()=>goHeroSlide(i);
+    dotsEl.appendChild(dot);
+  });
+  heroTimer=setInterval(()=>goHeroSlide((heroIdx+1)%heroSlides.length),5000);
+}
+function goHeroSlide(n){
+  const slides=document.querySelectorAll('.hero-slide');
+  const dots=document.querySelectorAll('.hero-dot');
+  if(!slides.length) return;
+  slides[heroIdx].classList.remove('active');
+  dots[heroIdx]&&dots[heroIdx].classList.remove('active');
+  heroIdx=n;
+  slides[heroIdx].classList.add('active');
+  dots[heroIdx]&&dots[heroIdx].classList.add('active');
+}
+
+// ===== FACILITIES =====
+const FAC_ICONS = {'Library':'fa-book-open','Lab':'fa-flask','Computer':'fa-desktop','Sports':'fa-futbol','Playground':'fa-child','Canteen':'fa-utensils','Toilet':'fa-restroom','Electricity':'fa-bolt','Water':'fa-tint','Classroom':'fa-chalkboard-teacher','Hall':'fa-theater-masks','Medical':'fa-medkit'};
+async function loadFacilities(){
+  const el=document.getElementById('facilitiesGrid');
+  try{
+    const rows=await fetchCSV(sheetURL(GID.facilities));
+    let html='';
+    for(let i=4;i<rows.length;i++){
+      const r=rows[i];
+      if(!r[0]) continue;
+      const name=r[0]||'', desc=r[1]||'', count=r[2]||'';
+      let icon='fa-building';
+      for(const k of Object.keys(FAC_ICONS)){ if(name.toLowerCase().includes(k.toLowerCase())){ icon=FAC_ICONS[k]; break; } }
+      html+=`<div class="facility-card fade-in">
+        <div class="facility-icon"><i class="fas ${icon}"></i></div>
+        <h3>${name}${count?` <span style="color:var(--saffron);">(${count})</span>`:''}</h3>
+        <p>${desc}</p>
+      </div>`;
+    }
+    el.innerHTML=html||'<div class="error-msg" style="grid-column:1/-1;">No facilities data.</div>';
+    observeFadeIn();
+  }catch(e){ el.innerHTML='<div class="error-msg" style="grid-column:1/-1;">Unable to load facilities.</div>'; }
+}
+
+// ===== EXAM SCHEDULES =====
+async function loadExamSchedule(){
+  // Load Class 9 & 10 combined
+  const el=document.getElementById('examScheduleBody');
+  const el10=document.getElementById('examScheduleBody10');
+  const el11=document.getElementById('examScheduleBody11');
+  const el12=document.getElementById('examScheduleBody12');
+
+  async function buildTable(gid, targetEl, label){
+    try{
+      const rows=await fetchCSV(sheetURL(gid));
+      if(!siteSettings['showexamschedule']){ targetEl.innerHTML=`<div class="error-msg">${label} exam schedule not yet published.</div>`; return; }
+      let html='<table class="exam-table"><tr><th>Subject</th><th>Date</th><th>Time</th></tr>';
+      for(let i=3;i<rows.length;i++){
+        const r=rows[i];
+        if(!r[0]) continue;
+        html+=`<tr><td>${r[0]||''}</td><td>${r[1]||''}</td><td>${r[2]||''}</td></tr>`;
+      }
+      html+='</table>';
+      targetEl.innerHTML=html;
+    }catch(e){ targetEl.innerHTML=`<div class="error-msg">Unable to load ${label} schedule.</div>`; }
+  }
+
+  buildTable(GID.examClass9, el, 'Class IX');
+  buildTable(GID.examClass10, el10, 'Class X');
+  buildTable(GID.examClass11, el11, 'Class XI');
+  buildTable(GID.examClass12, el12, 'Class XII');
+}
+
+async function loadUtkarsha(){
+  const el=document.getElementById('utkarshaBody');
+  try{
+    const rows=await fetchCSV(sheetURL(GID.utkarsha));
+    let html='<table class="exam-table"><tr><th>Subject</th><th>Date</th><th>Marks</th></tr>';
+    for(let i=3;i<rows.length;i++){
+      const r=rows[i];
+      if(!r[0]) continue;
+      html+=`<tr><td>${r[0]||''}</td><td>${r[1]||''}</td><td>${r[2]||''}</td></tr>`;
+    }
+    html+='</table>';
+    el.innerHTML=html;
+  }catch(e){ el.innerHTML='<div class="error-msg">Unable to load Utkarsha schedule.</div>'; }
+}
+
+// ===== STAFF =====
+let staffData=[];
+async function loadStaff(){
+  const el=document.getElementById('staffGrid');
+  const filterEl=document.getElementById('staffFilter');
+  try{
+    const rows=await fetchCSV(sheetURL(GID.staff));
+    staffData=[];
+    const cats=new Set(['all']);
+    // Row 3 is header (index 2), data starts at row 4 (index 3)
+    for(let i=3;i<rows.length;i++){
+      const r=rows[i];
+      if(!r[0]) continue;
+      const active=(r[7]||'').toLowerCase();
+      if(active==='no') continue;
+      staffData.push({ name:r[0]||'', desig:r[1]||'', qual:r[2]||'', subjects:r[3]||'', classes:r[4]||'', photo:r[5]||'', category:r[6]||'Teaching' });
+      cats.add(r[6]||'Teaching');
+    }
+    let fhtml='<button class="gallery-filter-btn active" data-cat="all" onclick="filterStaff(\'all\',this)">All</button>';
+    cats.forEach(c=>{ if(c!=='all') fhtml+=`<button class="gallery-filter-btn" data-cat="${c}" onclick="filterStaff('${c}',this)">${c}</button>`; });
+    filterEl.innerHTML=fhtml;
+    document.getElementById('statStaff').textContent=staffData.length+'+';
+    renderStaff(staffData);
+  }catch(e){ el.innerHTML='<div class="error-msg" style="grid-column:1/-1;">Unable to load staff.</div>'; }
+}
+
+function renderStaff(items){
+  const el=document.getElementById('staffGrid');
+  el.innerHTML=items.map(s=>{
+    const thumb=s.photo?driveThumb(s.photo):'';
+    return `<div class="staff-card fade-in">
+      <div class="staff-photo-wrap">
+        ${thumb
+          ?`<img class="staff-photo" src="${thumb}" alt="${s.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+             <div class="staff-photo-fallback" style="display:none;"><i class="fas fa-user-tie"></i></div>`
+          :`<div class="staff-photo-fallback"><i class="fas fa-user-tie"></i></div>`}
+        <div style="height:12px;"></div>
+      </div>
+      <div class="staff-info">
+        <h3>${s.name}</h3>
+        <div class="designation">${s.desig}</div>
+        <div class="subjects">${s.subjects}</div>
+        <div class="qualification">${s.qual}</div>
+        ${s.classes?`<div style="margin-top:5px;font-size:0.72rem;color:var(--saffron);">Classes: ${s.classes}</div>`:''}
+      </div>
+    </div>`;
+  }).join('');
+  observeFadeIn();
+}
+
+function filterStaff(cat, btn){
+  document.querySelectorAll('#staffFilter .gallery-filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderStaff(cat==='all'?staffData:staffData.filter(s=>s.category===cat));
+}
+
+// ===== TIMETABLE =====
+let activeTTClass='XA';
+async function loadTimetable(cls, btn){
+  activeTTClass=cls;
+  document.querySelectorAll('.tt-tab').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  const el=document.getElementById('timetableContent');
+  el.innerHTML='<div class="loading-spinner"><i class="fas fa-spinner"></i></div>';
+  try{
+    const rows=await fetchCSV(ttURL(cls));
+    if(rows.length<2){ el.innerHTML='<div class="error-msg">No timetable data for this class.</div>'; return; }
+    let html='<table class="timetable-table"><thead><tr>';
+    rows[0].forEach(h=>{ html+=`<th>${h}</th>`; });
+    html+='</tr></thead><tbody>';
+    for(let i=1;i<rows.length;i++){
+      if(!rows[i][0]) continue;
+      html+='<tr>'; rows[i].forEach(c=>{ html+=`<td>${c}</td>`; }); html+='</tr>';
+    }
+    html+='</tbody></table>';
+    el.innerHTML=html;
+  }catch(e){ el.innerHTML='<div class="error-msg">Unable to load timetable.</div>'; }
+}
+
+// ===== RESULTS =====
+let currentResultClass='9';
+async function switchResult(cls, btn){
+  currentResultClass=cls;
+  document.querySelectorAll('.result-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const el=document.getElementById('resultContent');
+  const key='result'+cls;
+  if(!siteSettings[key]){
+    el.innerHTML=`<div class="result-not-published">
+      <i class="fas fa-lock"></i>
+      <p>Class ${cls} results not yet published. / <span class="odia">ଫଳ ପ୍ରକାଶ ହୋଇ ନାହିଁ।</span></p>
+    </div>`; return;
+  }
+  el.innerHTML=`<div class="result-search-bar"><input type="text" id="resultSearchInput" placeholder="Search by name or roll no..."/><button onclick="searchResult()"><i class="fas fa-search"></i></button></div>
+  <div id="resultTableWrap"><div class="loading-spinner"><i class="fas fa-spinner"></i></div></div>`;
+  await loadResultTable(cls);
+}
+
+let resultRows=[];
+async function loadResultTable(cls){
+  const el=document.getElementById('resultTableWrap');
+  try{
+    const url=cls==='9'?RESULT_BASE9:RESULT_BASE10;
+    const rows=await fetchCSV(url);
+    resultRows=rows;
+    // Row 1=school, Row 2=exam title, Row 3=headers, Row 4+=data
+    const schoolName=rows[0]?rows[0][0]:'';
+    const examTitle=rows[1]?rows[1][0]:'';
+    const headers=rows[2]||[];
+    let html=`<div class="result-info-banner"><h3>${schoolName}</h3><p>${examTitle}</p></div>`;
+    html+=renderResultTable(rows.slice(3), headers);
+    el.innerHTML=html;
+  }catch(e){ el.innerHTML='<div class="error-msg">Unable to load results.</div>'; }
+}
+
+function renderResultTable(dataRows, headers){
+  let html='<div class="result-table-wrap"><table class="result-table"><thead><tr>';
+  headers.forEach(h=>{ html+=`<th>${h}</th>`; });
+  html+='</tr></thead><tbody>';
+  dataRows.forEach(r=>{ if(!r[0]) return; html+='<tr>'; r.forEach(c=>{ html+=`<td>${c}</td>`; }); html+='</tr>'; });
+  html+='</tbody></table></div>';
+  return html;
+}
+
+function searchResult(){
+  const q=(document.getElementById('resultSearchInput').value||'').toLowerCase();
+  const el=document.getElementById('resultTableWrap');
+  if(!resultRows.length) return;
+  const headers=resultRows[2]||[];
+  const dataRows=resultRows.slice(3).filter(r=>r.some(c=>(c||'').toLowerCase().includes(q)));
+  el.innerHTML=renderResultTable(dataRows, headers);
+}
+
+// ===== LIBRARY =====
+async function loadLibrary(){
+  const el=document.getElementById('libraryTableBody');
+  try{
+    const rows=await fetchCSV(LIB_BASE);
+    let html='';
+    for(let i=1;i<rows.length;i++){
+      const r=rows[i];
+      if(!r[0]&&!r[1]) continue;
+      const status=(r[5]||'Available').toLowerCase();
+      html+=`<tr>
+        <td>${i}</td>
+        <td>${r[0]||''}</td>
+        <td>${r[1]||''}</td>
+        <td>${r[2]||''}</td>
+        <td>${r[3]||''}</td>
+        <td><span class="${status.includes('issued')?'status-issued':'status-available'}">${r[5]||'Available'}</span></td>
+      </tr>`;
+    }
+    el.innerHTML=html||'<tr><td colspan="6" style="text-align:center;color:var(--gray-400);">No books found.</td></tr>';
+  }catch(e){ el.innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--gray-400);">Unable to load library.</td></tr>'; }
+}
+
+function submitLibraryRequest(){
+  const name=document.getElementById('libName').value.trim();
+  const roll=document.getElementById('libRoll').value.trim();
+  const book=document.getElementById('libBook').value.trim();
+  if(!name||!roll||!book){ alert('Please fill all fields.'); return; }
+  const payload=`Name=${encodeURIComponent(name)}&RollNo=${encodeURIComponent(roll)}&BookName=${encodeURIComponent(book)}`;
+  fetch(LIB_SCRIPT+'?'+payload, {method:'GET', mode:'no-cors'});
+  document.getElementById('libSuccess').style.display='block';
+  document.getElementById('libName').value='';
+  document.getElementById('libRoll').value='';
+  document.getElementById('libBook').value='';
+  setTimeout(()=>{ document.getElementById('libSuccess').style.display='none'; }, 4000);
+}
+
+// ===== ADMIN =====
+function openAdminModal(){
+  document.getElementById('admin-modal').classList.add('open');
+  if(sessionStorage.getItem('siteAdminOk')==='1'){
+    document.getElementById('adminLoginForm').style.display='none';
+    document.getElementById('adminSettings').style.display='flex';
+    applySettings();
+  }
+}
+function closeAdminModal(){ document.getElementById('admin-modal').classList.remove('open'); }
+function checkAdmin(){
+  const p=document.getElementById('adminPass').value;
+  if(p===ADMIN_PASS){
+    sessionStorage.setItem('siteAdminOk','1');
+    document.getElementById('adminLoginForm').style.display='none';
+    document.getElementById('adminSettings').style.display='flex';
+    document.getElementById('adminError').style.display='none';
+    applySettings();
+  } else {
+    document.getElementById('adminError').style.display='block';
+  }
+}
+function updateSetting(key, val){
+  siteSettings[key]=val;
+  applySettings();
+  // Note: This updates locally only. Full sync requires editing the Settings Sheet directly.
+  if(key==='result9'||key==='result10'){
+    const cls=key.replace('result','');
+    if(currentResultClass===cls){ switchResult(cls, document.querySelector('.result-tab.active')); }
+  }
+}
+document.getElementById('admin-modal').addEventListener('click',e=>{ if(e.target===e.currentTarget)closeAdminModal(); });
+
+// ===== MOBILE MENU =====
+function toggleMobileMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+
+// ===== SCROLL TO TOP =====
+window.addEventListener('scroll',()=>{
+  const st=document.getElementById('scrollTop');
+  window.scrollY>400?st.classList.add('show'):st.classList.remove('show');
+  // Active nav link
+  const sections=['notices','achievements','about','gallery','facilities','academics','staff','timetable','results','library','contact'];
+  let current='';
+  sections.forEach(id=>{ const el=document.getElementById(id); if(el&&window.scrollY>=el.offsetTop-100) current=id; });
+  document.querySelectorAll('.nav-links a').forEach(a=>{ a.classList.toggle('active', a.getAttribute('href')==='#'+current); });
+});
+
+// ===== FADE IN OBSERVER =====
+function observeFadeIn(){
+  const obs=new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); }); },{threshold:0.1});
+  document.querySelectorAll('.fade-in:not(.visible)').forEach(el=>obs.observe(el));
+}
+
+// ===== INIT =====
+async function init(){
+  await loadSettings();
+  loadNotices();
+  loadAchievements();
+  loadHMMessage();
+  loadGallery();
+  loadFacilities();
+  loadExamSchedule();
+  loadUtkarsha();
+  loadStaff();
+  loadTimetable('XA', document.querySelector('.tt-tab'));
+  switchResult('9', document.querySelector('.result-tab'));
+  loadLibrary();
+  observeFadeIn();
+  // Simulate stats
+  setTimeout(()=>{ document.getElementById('statStudents').textContent='400+'; }, 1000);
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
